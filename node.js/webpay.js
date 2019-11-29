@@ -1,9 +1,9 @@
 const crypto = require('crypto');
 const request = require('request');
 
-var merchantID = ''; // Enter your merchant ID here.
-var orderID = ''; // Enter your order ID here.
-var apiToken = ''; // Enter your API Token here.
+var merchantID = 'KKR787YAXB9F1'; // Enter your merchant ID here.
+var orderID = '8GCADRD79S1DW'; // Enter your order ID here.
+var apiToken = '297219eb-dbd6-1226-dd2f-97b86767b6cd'; // Enter your API Token here.
 
 var targetEnv = 'https://sandbox.dev.clover.com/v2/merchant/';
 
@@ -12,7 +12,7 @@ var tipAmount = 0;
 var taxAmount = 0;
 var cardNumber = '6011361000006668';
 var expMonth = 12;
-var expYear = 2018;
+var expYear = 2028;
 var cvv = 123;
 
 //###############################################
@@ -37,6 +37,7 @@ request(options, function(error, response, body) {
 
 // Process the encryption information received by the pay endpoint.
 function processEncryption(jsonResponse) {
+    console.log(jsonResponse);
     var prefix = jsonResponse['prefix'];
     var pem = jsonResponse['pem'];
 
